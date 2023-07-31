@@ -1,20 +1,14 @@
-package com.codebunny.Entity;
+package com.codebunny.NordicRose.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.codebunny.NordicRose.entity.Author;
 
-@Entity
-@Table(name = "author")
-public class Author {
-    @Id
+public class AuthorDTO {
     private Integer id;
     private String name;
     private String about;
     private String linkFb;
     private String linkTwt;
     private String linkWa;
-    private String image;
 
     public Integer getId() {
         return id;
@@ -64,11 +58,17 @@ public class Author {
         this.linkWa = linkWa;
     }
 
-    public String getImage() {
-        return image;
-    }
+    public static AuthorDTO fromEntity(Author author){
+        if (author==null) return new AuthorDTO();
+        AuthorDTO dto = new AuthorDTO();
 
-    public void setImage(String image) {
-        this.image = image;
+        dto.setAbout(author.getAbout());
+        dto.setId(author.getId());
+        dto.setName(author.getName());
+        dto.setLinkFb(author.getLinkfb());
+        dto.setLinkTwt(author.getLinktwt());
+        dto.setLinkWa(author.getLinkwa());
+
+        return dto;
     }
 }

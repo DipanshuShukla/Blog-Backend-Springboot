@@ -1,16 +1,19 @@
-package com.codebunny.Entity;
+package com.codebunny.NordicRose.entity;
 
+import com.codebunny.NordicRose.utils.BlogTagsId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "author")
+@Table(name = "blog_tags")
+@IdClass(BlogTagsId.class)
 public class BlogTags {
     @Id
     private Integer blogid;
     @Id
-    private Integer tagId;
+    private Integer tagid;
 
     public Integer getBlogid() {
         return blogid;
@@ -21,10 +24,10 @@ public class BlogTags {
     }
 
     public Integer getTagId() {
-        return tagId;
+        return tagid;
     }
 
     public void setTagId(Integer tagId) {
-        this.tagId = tagId;
+        this.tagid = tagId;
     }
 }

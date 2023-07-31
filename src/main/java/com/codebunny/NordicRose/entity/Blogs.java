@@ -1,4 +1,4 @@
-package com.codebunny.Entity;
+package com.codebunny.NordicRose.entity;
 
 import jakarta.persistence.*;
 
@@ -6,13 +6,13 @@ import jakarta.persistence.*;
 @Table(name = "blogs")
 public class Blogs {
     @Id
-    private Integer blogId;
+    private Integer blogid;
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "authorid")
     private Author author;
     private String title;
     private String subtitle;
-
+    private String thumbnail;
     public Author getAuthor() {
         return author;
     }
@@ -21,14 +21,12 @@ public class Blogs {
         this.author = author;
     }
 
-    private String thumbnail;
-
     public Integer getBlogId() {
-        return blogId;
+        return blogid;
     }
 
     public void setBlogId(Integer blogId) {
-        this.blogId = blogId;
+        this.blogid = blogId;
     }
 
 
