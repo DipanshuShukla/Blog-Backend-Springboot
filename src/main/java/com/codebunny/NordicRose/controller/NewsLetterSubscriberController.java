@@ -12,6 +12,7 @@ public class NewsLetterSubscriberController {
     @Autowired
     private NewsLetterSubscriberService service;
 
+    @CrossOrigin
     @PostMapping("/newsletter")
     private ResponseEntity<NewsLetterSubscriberDTO> addEmail(@RequestBody NewsLetterSubscriberDTO email){
         return new ResponseEntity<>(service.addNew(email), HttpStatus.OK);
