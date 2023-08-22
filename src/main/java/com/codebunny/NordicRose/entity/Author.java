@@ -13,9 +13,6 @@ public class Author {
     private String name;
     @Column(columnDefinition = "TEXT")
     private String about;
-    private String linkfb;
-    private String linktwt;
-    private String linkwa;
 
     public Integer getId() {
         return id;
@@ -41,27 +38,4 @@ public class Author {
         this.about = about;
     }
 
-    public String getLinkfb() {
-        return linkfb;
-    }
-
-    public void setLinkfb(String linkfb) {
-        this.linkfb = linkfb;
-    }
-
-    public String getLinktwt() {
-        return linktwt;
-    }
-
-    public void setLinktwt(String linktwt) {
-        this.linktwt = linktwt;
-    }
-
-    public String getLinkwa() {
-        return linkwa;
-    }
-
-    public void setLinkwa(String linkwa) {
-        this.linkwa = linkwa;
-    }
 }
