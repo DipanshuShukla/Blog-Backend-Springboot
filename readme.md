@@ -62,25 +62,6 @@ The application should now be running at the specified port, and you can start u
 
 For information on available API endpoints and how to use them, please refer to the API documentation, which can be found at [API Documentation](/api-documentation.md).
 
-## Project Structure
-
-The project follows the Maven build system and has the following project structure:
-
-```
-.
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── codebunny/
-│   │   │           └── NordicRoseApplication.java
-│   │   └── resources/
-│   │       ├── application.properties
-│   │       └── database-setup.sql
-├── pom.xml
-└── ...
-```
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
