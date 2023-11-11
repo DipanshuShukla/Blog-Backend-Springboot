@@ -2,6 +2,7 @@ package com.codebunny.NordicRose.dto;
 
 import com.codebunny.NordicRose.entity.Author;
 import com.codebunny.NordicRose.entity.Blogs;
+import com.codebunny.NordicRose.exception.BlogNotFoundException;
 
 import java.util.Optional;
 
@@ -67,8 +68,8 @@ public class BlogDTO {
         return new BlogDTO(entity.getBlogId(), AuthorDTO.fromEntity(entity.getAuthor()), entity.getTitle(), entity.getSubtitle(), entity.getThumbnail());
     }
 
-    public static BlogDTO fromEntity(Optional<Blogs> optional) {
-        Blogs entity = optional.orElse(new Blogs());
+    public static BlogDTO fromEntity(Optional<Blogs> optional, int blogId) throws BlogNotFoundException{
+        Blogs entity = optional.orElseThrow(() -> new BlogNotFoundException("The requested blog with ID " + blogId + " does not exist."));
         return fromEntity(entity);
     }
 
