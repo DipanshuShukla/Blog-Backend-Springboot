@@ -5,8 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@EnableAutoConfiguration
-// @ComponentScan(basePackageClasses = AuthorController.class)
+//@EnableAutoConfiguration
 
 public class NordicRoseApplication {
 
