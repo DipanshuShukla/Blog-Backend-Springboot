@@ -11,6 +11,11 @@ public class Tags {
     private Integer tagid;
     private String tagname;
 
+    public Tags(Integer tagid, String tagname) {
+        this.tagid = tagid;
+        this.tagname = tagname;
+    }
+
     public Integer getTagid() {
         return tagid;
     }
