@@ -5,6 +5,14 @@ import com.codebunny.NordicRose.entity.NewsLetterSubscriber;
 public class NewsLetterSubscriberDTO {
     private String email;
 
+    public NewsLetterSubscriberDTO(String mail) {
+        this.email = mail;
+    }
+
+    public NewsLetterSubscriberDTO() {
+
+    }
+
     public String getEmail() {
         return email;
     }
