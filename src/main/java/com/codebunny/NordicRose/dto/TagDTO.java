@@ -6,6 +6,10 @@ public class TagDTO {
     private Integer tagid;
     private String tagname;
 
+    // Default constructor
+    public TagDTO() {
+    }
+
     public TagDTO(Integer tagid, String tagname) {
         this.tagid = tagid;
         this.tagname = tagname;
