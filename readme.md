@@ -64,8 +64,6 @@ For information on available API endpoints and how to use them, please refer to 
 
 ## Docker Image
 
-[![DockerHub](https://img.shields.io/docker/pulls/dipanshushukla/nordic-rose-blog-backend.svg)](https://hub.docker.com/r/dipanshushukla/nordic-rose-blog-backend)
-
 You can find the Docker image for this backend on DockerHub. Click on the badge above or visit [DockerHub - Nordic Rose Blog Backend](https://hub.docker.com/r/dipanshushukla/nordic-rose-blog-backend) to access the Docker image.
 
 ## License
