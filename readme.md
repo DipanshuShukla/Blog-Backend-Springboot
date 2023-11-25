@@ -64,7 +64,7 @@ For information on available API endpoints and how to use them, please refer to 
 
 ## Docker Image
 
-You can find the Docker image for this backend on DockerHub. Click on the badge above or visit [DockerHub - Nordic Rose Blog Backend](https://hub.docker.com/r/dipanshushukla/nordic-rose-blog-backend) to access the Docker image.
+You can find the Docker image for this backend on DockerHub. Visit [DockerHub - Nordic Rose Blog Backend](https://hub.docker.com/r/dipanshushukla/nordic-rose-blog-backend) to access the Docker image.
 
 ## License
 
