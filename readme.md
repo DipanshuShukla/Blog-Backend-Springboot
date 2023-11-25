@@ -68,4 +68,4 @@ You can find the Docker image for this backend on DockerHub. Visit [DockerHub - 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more details.
