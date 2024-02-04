@@ -2,7 +2,7 @@
 
 This is the backend for the Nordic Rose blog project, built using Spring Boot. It connects to a MySQL database and provides essential functionality for managing and serving blog content.
 
-If you are looking for the frontend of the Nordic Rose blog project, you can find it at [Nordic Rose Blog Frontend](https://github.com/DipanshuShukla/Blog-Frontend-Angular.git).
+If you are looking for the frontend repo of the Nordic Rose blog project, you can find it at [Nordic Rose Blog Frontend](https://github.com/DipanshuShukla/Blog-Frontend-Angular.git).
 
 ## Prerequisites
 
