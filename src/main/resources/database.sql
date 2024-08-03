@@ -1,11 +1,40 @@
 CREATE DATABASE `nordic_rose`
-
+	
 CREATE TABLE `author` (
   `id` int NOT NULL,
   `about` text,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 )
+
+CREATE TABLE `blogs` (
+  `blogid` int NOT NULL,
+  `subtitle` varchar(255) DEFAULT NULL,
+  `thumbnail` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `authorid` int DEFAULT NULL,
+  PRIMARY KEY (`blogid`),
+  KEY `FKn06dbdwqwrruolpd4nq2kiu9l` (`authorid`),
+  CONSTRAINT `FKn06dbdwqwrruolpd4nq2kiu9l` FOREIGN KEY (`authorid`) REFERENCES `author` (`id`)
+)
+
+CREATE TABLE `news_letter_subscribers` (
+  `email` varchar(255) NOT NULL,
+  PRIMARY KEY (`email`)
+)
+
+CREATE TABLE `tags` (
+  `tagid` int NOT NULL,
+  `tagname` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`tagid`)
+)
+
+CREATE TABLE `blog_tags` (
+  `blogid` int NOT NULL,
+  `tagid` int NOT NULL,
+  PRIMARY KEY (`blogid`,`tagid`)
+)
+
 INSERT INTO nordic_rose.author (id,about,name) VALUES
 	 (1,'I am a passionate writer and blogger, dedicated to exploring the beauty of words and sharing compelling stories with the world. Through my writing, I aim to inspire, entertain, and provoke thought in my readers. Join me on this literary journey!','John Doe'),
 	 (2,'As an adventurous soul, I have made it my mission to travel the globe and capture the essence of each destination through the power of words. Join me as I take you on thrilling expeditions, unravel fascinating cultures, and unearth hidden gems around the world, one blog post at a time.','Jane Smith'),
@@ -18,16 +47,6 @@ INSERT INTO nordic_rose.author (id,about,name) VALUES
 	 (9,'Welcome to the world of technology and innovation! I am passionate about exploring the latest advancements, gadgets, and trends shaping our digital landscape. Join me as we navigate the ever-evolving realm of tech, unraveling its complexities, and embracing its potential to transform the way we live and interact.','Daniel Wilson'),
 	 (10,'I''m an avid reader and literary critic, constantly searching for captivating stories that transport us to different worlds and broaden our perspectives. Join me as we delve into the realm of literature, sharing book reviews, author interviews, and thought-provoking discussions that celebrate the power of storytelling.','Olivia Anderson');
 
-CREATE TABLE `blogs` (
-  `blogid` int NOT NULL,
-  `subtitle` varchar(255) DEFAULT NULL,
-  `thumbnail` varchar(255) DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `authorid` int DEFAULT NULL,
-  PRIMARY KEY (`blogid`),
-  KEY `FKn06dbdwqwrruolpd4nq2kiu9l` (`authorid`),
-  CONSTRAINT `FKn06dbdwqwrruolpd4nq2kiu9l` FOREIGN KEY (`authorid`) REFERENCES `author` (`id`)
-)
 INSERT INTO nordic_rose.blogs (blogid,subtitle,thumbnail,title,authorid) VALUES
 	 (1,'Exploring the advancements and potential of AI in today''s world.','https://example.com/thumbnails/ai.jpg','The Future of Artificial Intelligence',1),
 	 (2,'Discovering the hidden gems and rich cultural heritage of Europe.','https://example.com/thumbnails/europe.jpg','A Journey Through Europe',2),
@@ -50,20 +69,11 @@ INSERT INTO nordic_rose.blogs (blogid,subtitle,thumbnail,title,authorid) VALUES
 	 (19,'Discovering tranquility and peace through mindfulness practices.','https://example.com/thumbnails/yoga-meditation.jpg','Yoga and Meditation: A Path to Inner Harmony',3),
 	 (20,'Embarking on a cosmic journey to understand the universe and its wonders.','https://example.com/thumbnails/universe.jpg','Unraveling the Mysteries of the Universe',1);
 
-CREATE TABLE `news_letter_subscribers` (
-  `email` varchar(255) NOT NULL,
-  PRIMARY KEY (`email`)
-)
 INSERT INTO nordic_rose.news_letter_subscribers (email) VALUES
 	 ('test@test.com'),
 	 ('test1@test.com'),
 	 ('test2@test.com');
 
-CREATE TABLE `tags` (
-  `tagid` int NOT NULL,
-  `tagname` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`tagid`)
-)
 INSERT INTO nordic_rose.tags (tagid,tagname) VALUES
 	 (1,'Technology'),
 	 (2,'Travel'),
@@ -81,11 +91,6 @@ INSERT INTO nordic_rose.tags (tagid,tagname) VALUES
 	 (14,'Movies'),
 	 (15,'Gaming');
 
-CREATE TABLE `blog_tags` (
-  `blogid` int NOT NULL,
-  `tagid` int NOT NULL,
-  PRIMARY KEY (`blogid`,`tagid`)
-)
 INSERT INTO nordic_rose.blog_tags (blogid,tagid) VALUES
 	 (1,1),
 	 (1,5),
